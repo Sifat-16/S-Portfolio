@@ -4,11 +4,11 @@ from .forms import ContactForm
 # Create your views here.
 
 def home(request):
-    profile = Profile.objects.all().order_by('-id')[0]
+    profile = Profile.objects.all().first()
 
     facts = Facts.objects.all()
     skill = Skills.objects.all()
-    rs = ResumeSummery.objects.all().order_by('-id')[0]
+    rs = ResumeSummery.objects.all().first()
     education = Education.objects.all()
     profession = ProfessionalExperience.objects.all()
     portfolio = Portfolio.objects.all()
